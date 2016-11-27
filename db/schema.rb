@@ -11,7 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122193736) do
+ActiveRecord::Schema.define(version: 20161127205111) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "authors", force: :cascade do |t|
+    t.string   "nome",            null: false
+    t.string   "nacionalidade"
+    t.date     "data_nascimento"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "book_authors", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "book_categories", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string   "isbn",        limit: 13, null: false
+    t.string   "titulo",                 null: false
+    t.string   "editora",                null: false
+    t.integer  "edicao",                 null: false
+    t.string   "idioma",                 null: false
+    t.text     "sinopse"
+    t.integer  "num_paginas"
+    t.integer  "ano"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "books", ["isbn"], name: "index_books_on_isbn", unique: true, using: :btree
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "categoria",        null: false
+    t.string   "descricao"
+    t.integer  "categoria_pai_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "categories", ["categoria"], name: "index_categories_on_categoria", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
@@ -20,9 +70,19 @@ ActiveRecord::Schema.define(version: 20161122193736) do
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
+    t.string   "nome",                           null: false
+    t.string   "cpf",                limit: 11,  null: false
+    t.date     "data_nascimento",                null: false
+    t.string   "telefone",           limit: 11,  null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["cpf"], name: "index_users_on_cpf", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
+  add_foreign_key "book_authors", "authors"
+  add_foreign_key "book_authors", "books"
+  add_foreign_key "book_categories", "books"
+  add_foreign_key "book_categories", "categories"
+  add_foreign_key "categories", "categories", column: "categoria_pai_id"
 end

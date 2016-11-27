@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  categoria: MyString
+  descricao: MyString
+  categoria_pai_id: 
+
+two:
+  categoria: MyString
+  descricao: MyString
+  categoria_pai_id: 

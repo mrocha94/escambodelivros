@@ -8,7 +8,6 @@ Rails.application.routes.draw do
            only: [:create]
 
   resources :users,
-            controller: 'clearance/users',
             only: Clearance.configuration.user_actions do
     resource :password,
              controller: 'clearance/passwords',
@@ -19,9 +18,10 @@ Rails.application.routes.draw do
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
 
   if Clearance.configuration.allow_sign_up?
-    get '/sign_up' => 'clearance/users#new', as: 'sign_up'
+    get '/sign_up' => 'users#new', as: 'sign_up'
   end
-  # The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of creation:
+  #   first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
+  # Example resource route(maps HTTP verbs to controller actions automatically):
   #   resources :products
 
   # Example resource route with options:
