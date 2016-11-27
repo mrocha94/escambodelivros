@@ -1,4 +1,14 @@
 <div class="text-field">
+  <%= form.label :nome %>
+  <%= form.text_field :nome, type: 'text' %>
+</div>
+
+<div class="text-field">
+  <%= form.label :cpf %>
+  <%= form.text_field :cpf, pattern: '[0-9]{11}' %>
+</div>
+
+<div class="text-field">
   <%= form.label :email %>
   <%= form.text_field :email, type: 'email' %>
 </div>
@@ -6,4 +16,14 @@
 <div class="password-field">
   <%= form.label :password %>
   <%= form.password_field :password %>
+</div>
+
+<div class="text-field">
+  <%= form.label :data_nascimento %>
+  <%= form.date_select :data_nascimento, start_year: 1910, order: [:day, :month, :year] %>
+</div>
+
+<div class="text-field">
+  <%= form.label :telefone %>
+  <%= form.text_field :telefone, pattern: '[0-9]{10,11}'%>
 </div>
