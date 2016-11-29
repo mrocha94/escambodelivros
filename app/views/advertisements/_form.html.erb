@@ -1,0 +1,14 @@
+<%= form_for(@advertisement) do |form| %>
+  <div class="actions">
+    <div class="text-field">
+      <%= form.label :descricao %>
+      <%= form.text_area :descricao, type: 'text' %>
+    </div>
+
+    <div class="text-field">
+      <%= form.label :books %>
+      <%= form.collection_select :books, Book.order(:titulo), :id, :titulo, {:include_blank => true}, {:multiple => true} %>
+    </div>
+    <%= form.submit %>
+  </div>
+<% end %>
