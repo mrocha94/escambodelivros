@@ -1,29 +1,29 @@
 <div class="text-field">
   <%= form.label :nome %>
-  <%= form.text_field :nome, type: 'text' %>
+  <%= form.text_field :nome, type: 'text', class: 'form-control' %>
 </div>
 
 <div class="text-field">
   <%= form.label :cpf %>
-  <%= form.text_field :cpf, pattern: '[0-9]{11}' %>
+  <%= form.text_field :cpf, pattern: '[0-9]{11}', class: 'form-control' %>
 </div>
 
 <div class="text-field">
   <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
+  <%= form.text_field :email, type: 'email', class: 'form-control' %>
 </div>
 
 <div class="password-field">
   <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= form.password_field :password, class: 'form-control' %>
 </div>
 
 <div class="text-field">
   <%= form.label :data_nascimento %>
-  <%= form.date_select :data_nascimento, start_year: 1910, order: [:day, :month, :year] %>
+  <%= form.date_select :data_nascimento, start_year: 1910, order: [:day, :month, :year], class: 'form-control' %>
 </div>
 
 <div class="text-field">
   <%= form.label :telefone %>
-  <%= form.text_field :telefone, pattern: '[0-9]{10,11}'%>
+  <%= form.text_field :telefone, pattern: '[0-9]{10,11}', class: 'form-control'%>
 </div>
