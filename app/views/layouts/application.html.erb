@@ -13,12 +13,17 @@
     <% end -%>
   </div>
 
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%=h value %></div>
-    <% end %>
-  </div>
-
+  <% if flash[:notice] -%>
+    <div id="notice.message.alert.alert-info"><%=flash[:notice] %></div>
+  <% elsif flash[:warning] -%>
+    <div id="warning.has_error.message.alert.alert-danger">
+      <ul class="warning">
+        <% flash[:warning].each do |msg| -%>
+          <li><%=msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= yield %>
 </body>
 </html>
