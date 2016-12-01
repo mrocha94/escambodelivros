@@ -1,11 +1,26 @@
 class AdvertisementsController < ApplicationController
+  before_action :require_login, only: [:user_advertisements]
   before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /advertisements
   # GET /advertisements.json
   def index
-    @advertisements = Advertisement.all
+    search = params[:search]
+    if search && search.size > 0
+      @advertisements = Advertisement.search(search)
+    else
+      @advertisements = Advertisement.where(ativo: true)
+    end
+  end
+
+  def user_advertisements
+    search = params[:search]
+    if search && search.size > 0
+      @advertisements = Advertisement.search(search, current_user.id)
+    else
+      @advertisements = Advertisement.where(user_id: current_user.id)
+    end
   end
 
   # GET /advertisements/1

@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :books_group_has_book
   end
 
+  get '/my_advertisements' => 'advertisements#user_advertisements', as: 'my_advertisements'
+
   get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
   root to: 'advertisements#index'

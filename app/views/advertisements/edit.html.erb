@@ -2,13 +2,18 @@
 
 <%= render 'form' %>
 
+<h3>Livros</h3>
 <table class="table">
     <tr>
-      <th>Livros</th>
+      <th>Titulo</th>
+      <th>Estado</th>
+      <th>Ano de Compra</th>
     </tr>
   <% @advertisement.books_group_has_books.each do |book| -%>
     <tr>
       <td><%= book.book.titulo %></td>
+      <td><%= book.estado %></td>
+      <td><%= book.ano_compra %></td>
       <td><%= link_to 'x', books_group_has_book_path(book, return_url: edit_advertisement_path(@advertisement)), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>

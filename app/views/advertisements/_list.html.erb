@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <th>Last Modified</th>
+    </tr>
+    <% @advertisements.each do |advertisement| %>
+      <tr>
+        <td><%= (advertisement.titulo.nil? || advertisement.titulo.size == 0)? '[No Title]' : advertisement.titulo %></td>
+        <td><%= advertisement.updated_at %></td>
+        <td><%= link_to 'Show', advertisement_path(advertisement) %></td>
+        <td><%= link_to 'Edit', edit_advertisement_path(advertisement) if signed_in? && current_user.id == advertisement.user_id %></td>
+        <td><%= link_to 'Destroy', advertisement_path(advertisement), method: :delete, data: { confirm: 'Are you sure?' } if signed_in? && current_user.id == advertisement.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Advertisement', new_advertisement_path if signed_in? %>

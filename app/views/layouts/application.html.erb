@@ -13,6 +13,13 @@
           <div class="navbar-header">
             <%= link_to "Escambo de Livros", root_path, class: 'navbar-brand' %>
           </div>
+          <ul class="nav navbar-nav">
+            <% if signed_in? %>
+              <li>
+                <%= link_to 'My Advertisements', my_advertisements_path %>
+              </li>
+            <% end %>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if signed_in? %>
               <li>
