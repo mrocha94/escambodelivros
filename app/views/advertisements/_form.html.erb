@@ -1,8 +1,16 @@
 <%= form_for(@advertisement) do |form| %>
   <div class="actions">
     <div class="text-field">
-      <%= form.label :descricao %>
+      <%= form.label :titulo %> <br>
+      <%= form.text_field :titulo, type: 'text' %>
+    </div>
+    <div class="text-field">
+      <%= form.label :descricao %> <br>
       <%= form.text_area :descricao, type: 'text' %>
+    </div>
+    <div class="text-field">
+      <%= form.label :ativo %>
+      <%= form.check_box :ativo, type: 'text' %>
     </div>
 
     <%= form.submit %>

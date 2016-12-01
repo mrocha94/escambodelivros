@@ -2,18 +2,18 @@
 
 <%= form_tag url_for(:controller => 'books_group_has_book', :action => 'create'), action: 'post' do -%>
   <div class="text-field">
-    <%= label :books_group_has_book, :book %>
+    <%= label :books_group_has_book, :book %><br>
 
     <%= collection_select :books_group_has_book, :book_id, @books, :id, :titulo %>
   </div>
 
   <div class="text-field">
-    <%= label :books_group_has_book, :estado %>
+    <%= label :books_group_has_book, :estado %><br>
     <%= text_field :books_group_has_book, :estado %>
   </div>
 
   <div class="text-field">
-    <%= label :books_group_has_book, :ano_compra %>
+    <%= label :books_group_has_book, :ano_compra %><br>
     <%= text_field :books_group_has_book, :ano_compra %>
   </div>
 

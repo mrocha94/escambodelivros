@@ -1,5 +1,6 @@
 class AdvertisementsController < ApplicationController
   before_action :set_advertisement, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /advertisements
   # GET /advertisements.json
@@ -55,6 +56,7 @@ class AdvertisementsController < ApplicationController
         format.html { redirect_to edit_advertisement_path(@advertisement), notice: 'Advertisement was successfully updated.' }
         format.json { render :edit, status: :ok, location: @advertisement }
       else
+        flash[:warning] = @advertisement.errors.full_messages
         format.html { render :edit }
         format.json { render json: @advertisement.errors, status: :unprocessable_entity }
       end
@@ -79,6 +81,12 @@ class AdvertisementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertisement_params
-      params.require(:advertisement).permit(:descricao)
+      params.require(:advertisement).permit(:titulo, :descricao, :ativo)
+    end
+
+    def check_user
+      return if @advertisement.user.id == current_user.id
+      flash[:notice] = 'Unauthorized'
+      redirect_to advertisement_path(@advertisement)
     end
 end

@@ -10,12 +10,17 @@
   </thead>
 
   <tbody>
+    <tr>
+      <th>Title</th>
+      <th>Last Modified</th>
+    </tr>
     <% @advertisements.each do |advertisement| %>
       <tr>
-        <td>id: <%= advertisement.id %></td>
+        <td><%= (advertisement.titulo.nil? || advertisement.titulo.size == 0)? '[No Title]' : advertisement.titulo %></td>
+        <td><%= advertisement.updated_at %></td>
         <td><%= link_to 'Show', advertisement %></td>
-        <td><%= link_to 'Edit', edit_advertisement_path(advertisement) %></td>
-        <td><%= link_to 'Destroy', advertisement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_advertisement_path(advertisement) if current_user == advertisement.user %></td>
+        <td><%= link_to 'Destroy', advertisement, method: :delete, data: { confirm: 'Are you sure?' } if current_user == advertisement.user %></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Advertisement', new_advertisement_path %>
+<%= link_to 'New Advertisement', new_advertisement_path if signed_in? %>
