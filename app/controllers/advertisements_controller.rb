@@ -18,6 +18,9 @@ class AdvertisementsController < ApplicationController
     @advertisement.user_id = current_user.id
     @advertisement.books_group = BooksGroup.create
     @advertisement.save
+    # client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'test')
+    # collection = client[:advertisement]
+    # collection.insert_one(relational_id: @advertisement.id)
     redirect_to edit_advertisement_path(@advertisement)
   end
   # GET /advertisements/1/edit
@@ -28,7 +31,6 @@ class AdvertisementsController < ApplicationController
   # POST /advertisements.json
   def create
     @advertisement = Advertisement.new(advertisement_params)
-
     respond_to do |format|
       if @advertisement.save
         format.html { redirect_to @advertisement, notice: 'Advertisement was successfully created.' }
@@ -43,8 +45,13 @@ class AdvertisementsController < ApplicationController
   # PATCH/PUT /advertisements/1
   # PATCH/PUT /advertisements/1.json
   def update
+
     respond_to do |format|
       if @advertisement.update(advertisement_params)
+        # client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'test')
+        # collection = client[:advertisement]
+        # collection.update_one({relational_id: @advertisement.id}, { '$set' => { descricao: @advertisement.descricao,  }})
+
         format.html { redirect_to edit_advertisement_path(@advertisement), notice: 'Advertisement was successfully updated.' }
         format.json { render :edit, status: :ok, location: @advertisement }
       else

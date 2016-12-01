@@ -15,8 +15,8 @@ class BooksGroupHasBookController < ApplicationController
 
     @books_group_has_books = BooksGroupHasBook.new(books_group_has_book_from_params)
     @advertisement = Advertisement.find_by_id(params[:advertisement_id])
-    @books_group_has_books.books_group = @advertisement.books_group
-    if @books_group_has_books.save
+    @advertisement.books_group.books_group_has_book << @books_group_has_books
+    if @advertisement.save
       redirect_to edit_advertisement_path(@advertisement)
     else
       flash[:warning] = @books_group_has_books.errors.full_messages

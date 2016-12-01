@@ -4,4 +4,10 @@ class Category < ActiveRecord::Base
   has_many :books, through: :book_categories
 
   validates :categoria, presence: true
+
+  def to_json
+    json = {}
+    json[:categoria] = categoria
+    json
+  end
 end
