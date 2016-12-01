@@ -5,7 +5,13 @@ class AdvertisementsController < ApplicationController
   # GET /advertisements
   # GET /advertisements.json
   def index
-    @advertisements = Advertisement.all
+    search = params[:search]
+    if search && search.size > 0
+      @advertisements = Advertisement.search(search)
+      @advertisements.each { |a| puts a.attributes }
+    else
+      @advertisements = Advertisement.where(ativo: true)
+    end
   end
 
   # GET /advertisements/1
