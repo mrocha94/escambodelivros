@@ -1,4 +1,21 @@
+<h3>Livros</h3>
+<table class="table">
+    <tr>
+      <th>Titulo</th>
+      <th>Estado</th>
+      <th>Ano de Compra</th>
+    </tr>
+  <% @advertisement.books_group_has_books.each do |book| -%>
+    <tr>
+      <td><%= book.book.titulo %></td>
+      <td><%= book.estado %></td>
+      <td><%= book.ano_compra %></td>
+    </tr>
+  <% end %>
+</table>
 
+<h3>Descricao</h3>
+<p><%= @advertisement.descricao %></p>
 
-<%= link_to 'Edit', edit_advertisement_path(@advertisement) %> |
+<%= link_to 'Edit', edit_advertisement_path(@advertisement) if current_user == @advertisement.user %>
 <%= link_to 'Back', advertisements_path %>
