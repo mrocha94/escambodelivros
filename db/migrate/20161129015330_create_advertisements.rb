@@ -2,7 +2,7 @@ class CreateAdvertisements < ActiveRecord::Migration
   def change
     create_table :advertisements do |t|
       t.datetime :data_fim
-      t.boolean :ativo?
+      t.boolean :ativo, default: false
       t.text :descricao
       t.references :user
       t.references :books_group

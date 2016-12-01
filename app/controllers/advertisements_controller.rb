@@ -15,8 +15,11 @@ class AdvertisementsController < ApplicationController
   # GET /advertisements/new
   def new
     @advertisement = Advertisement.new
+    @advertisement.user_id = current_user.id
+    @advertisement.books_group = BooksGroup.create
+    @advertisement.save
+    redirect_to edit_advertisement_path(@advertisement)
   end
-
   # GET /advertisements/1/edit
   def edit
   end
@@ -42,8 +45,8 @@ class AdvertisementsController < ApplicationController
   def update
     respond_to do |format|
       if @advertisement.update(advertisement_params)
-        format.html { redirect_to @advertisement, notice: 'Advertisement was successfully updated.' }
-        format.json { render :show, status: :ok, location: @advertisement }
+        format.html { redirect_to edit_advertisement_path(@advertisement), notice: 'Advertisement was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @advertisement }
       else
         format.html { render :edit }
         format.json { render json: @advertisement.errors, status: :unprocessable_entity }
@@ -69,6 +72,6 @@ class AdvertisementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertisement_params
-      params.fetch(:advertisement, {})
+      params.require(:advertisement).permit(:descricao)
     end
 end

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20161129015330) do
 
   create_table "advertisements", force: :cascade do |t|
     t.datetime "data_fim"
-    t.boolean  "ativo?"
+    t.boolean  "ativo"
     t.text     "descricao"
     t.integer  "user_id"
     t.integer  "books_group_id"

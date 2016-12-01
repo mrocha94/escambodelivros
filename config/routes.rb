@@ -14,7 +14,11 @@ Rails.application.routes.draw do
              only: [:create, :edit, :update]
   end
 
-  resources :advertisements
+  resources :books_group_has_book, only: [:destroy]
+
+  resources :advertisements do
+    resources :books_group_has_book
+  end
 
   get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'

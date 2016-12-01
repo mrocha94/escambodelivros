@@ -1,0 +1,22 @@
+<h2> Add book </h2>
+
+<%= form_tag url_for(:controller => 'books_group_has_book', :action => 'create'), action: 'post' do -%>
+  <div class="text-field">
+    <%= label :books_group_has_book, :book %>
+
+    <%= collection_select :books_group_has_book, :book_id, @books, :id, :titulo %>
+  </div>
+
+  <div class="text-field">
+    <%= label :books_group_has_book, :estado %>
+    <%= text_field :books_group_has_book, :estado %>
+  </div>
+
+  <div class="text-field">
+    <%= label :books_group_has_book, :ano_compra %>
+    <%= text_field :books_group_has_book, :ano_compra %>
+  </div>
+
+  <%= submit_tag %>
+
+<% end %>
