@@ -13,6 +13,7 @@ class Book < ActiveRecord::Base
   def to_json
     json = {}
     json[:titulo] = titulo
+    json[:sinopse] = sinopse
     json[:editora] = editora
     json[:isbn] = isbn
     json[:edicao] = edicao
