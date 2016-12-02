@@ -15,12 +15,7 @@ class AdvertisementsController < ApplicationController
   end
 
   def user_advertisements
-    search = params[:search]
-    if search && search.size > 0
-      @advertisements = Advertisement.search(search, current_user.id)
-    else
-      @advertisements = Advertisement.where(user_id: current_user.id)
-    end
+    @advertisements = Advertisement.where(user_id: current_user.id)
   end
 
   # GET /advertisements/1

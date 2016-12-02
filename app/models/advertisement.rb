@@ -8,27 +8,9 @@ class Advertisement < ActiveRecord::Base
   belongs_to :user
 
   validate :ativo?
-  #
-  # def self.search text
-  #   client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'test')
-  #   client[:advertisement].find(
-  #     {'$text' => {'$search' => text}},
-  #     { fields: {score: {'$meta' => 'textScore'}}}).sort({score:{'$meta' => 'textScore'}})
-  # end
-
-  # def self.search text
-  #   client = Mongo::Client.new(['127.0.0.1:27017'], database: 'test')
-  #   results = client[:advertisement]
-  #     .find(
-  #       { '$text' => { '$search' => text } },
-  #       projection: { score: { '$meta' => 'textScore' } }
-  #     ) #.sort(score: { '$meta' => 'textScore' })
-  #   results.each {|doc| puts doc}
-  #   results
-  # end
 
   def self.search(text, user = nil)
-    client = Mongo::Client.new(['127.0.0.1:27017'], database: 'test')
+    client = Advertisement.client
     filter = { '$text' => { '$search' => text } }
     filter[:user_id] = user unless user.nil?
     query_result = client[:advertisement].find(
@@ -63,17 +45,21 @@ class Advertisement < ActiveRecord::Base
   end
 
   def remove_from_mongo
-    client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'test')
+    client = Advertisement.client
     client[:advertisement].delete_one(relational_id: id)
   end
 
   def save_to_mongo
-    client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'test')
+    client = Advertisement.client
     if ativo
       client[:advertisement].update_one({relational_id: id}, self.to_json, {upsert: true})
     else
       client[:advertisement].delete_one(relational_id: id)
     end
+  end
+
+  def self.client
+    Mongo::Client.new(['127.0.0.1:27017'], database: 'escambodelivro_development')
   end
 
 end
