@@ -12,6 +12,7 @@ class AdvertisementsController < ApplicationController
     else
       @advertisements = Advertisement.where(ativo: true)
     end
+    Advertisement.save_to_neo
   end
 
   def user_advertisements

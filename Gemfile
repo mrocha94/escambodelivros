@@ -12,6 +12,9 @@ gem 'haml'
 gem 'pg'
 
 gem 'mongo'
+
+gem 'neo4j-core'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

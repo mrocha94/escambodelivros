@@ -10,17 +10,15 @@ class Advertisement < ActiveRecord::Base
   validate :ativo?
 
   def self.search(text, user = nil)
-    client = Advertisement.client
+    client = Advertisement.mongo_client
     filter = { '$text' => { '$search' => text } }
     filter[:user_id] = user unless user.nil?
     query_result = client[:advertisement].find(
       filter,
       projection: { 'score' => { '$meta' => 'textScore' }, 'titulo' => 1, relational_id: 1, updated_at: 1, user_id: 1}
-    ).sort({score:{'$meta' => 'textScore'}})
-    # db.advertisement.find( {"$text": { "$search": "Harry" } }, { "titulo": 1 });
+    ).sort(score: { '$meta' => 'textScore' })
     advertisements = []
     query_result.each do |result|
-      # puts "aaaaaaaaaaaaaaaaaaaaaaaaa: #{result}"
       advertisements.push Advertisement.new(id: result[:relational_id], titulo: result[:titulo], updated_at: result[:updated_at], user_id: result[:user_id])
     end
     advertisements
@@ -38,6 +36,19 @@ class Advertisement < ActiveRecord::Base
     json
   end
 
+  def self.mongo_client
+    Mongo::Client.new(['127.0.0.1:27017'], database: 'escambodelivro_development')
+  end
+
+  def self.neo_session
+    Neo4j::Session.open(:server_db, 'http://localhost:7474', basic_auth: { username: 'neo4j', password: 'batata'})
+  end
+
+  def self.save_to_neo
+    session = Advertisement.neo_session
+    Neo4j::Node.create({name: 'andreas'}, :red, :green)
+  end
+
   private
 
   def ativo?
@@ -45,12 +56,12 @@ class Advertisement < ActiveRecord::Base
   end
 
   def remove_from_mongo
-    client = Advertisement.client
+    client = Advertisement.mongo_client
     client[:advertisement].delete_one(relational_id: id)
   end
 
   def save_to_mongo
-    client = Advertisement.client
+    client = Advertisement.mongo_client
     if ativo
       client[:advertisement].update_one({relational_id: id}, self.to_json, {upsert: true})
     else
@@ -58,8 +69,6 @@ class Advertisement < ActiveRecord::Base
     end
   end
 
-  def self.client
-    Mongo::Client.new(['127.0.0.1:27017'], database: 'escambodelivro_development')
-  end
+
 
 end
