@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  after_save :save_to_neo
+
   has_many :book_authors
   has_many :authors, through: :book_authors
   has_many :book_categories
@@ -23,5 +25,22 @@ class Book < ActiveRecord::Base
     json[:authors] = []
     authors.each { |a| json[:authors].push a.to_json }
     json
+  end
+
+  private
+
+  def save_to_neo
+    session = DbConnection.neo4j
+    query = session.query.merge(b: { Book: { id: id } })
+    categories.each do |category|
+      query.merge(c: { Category: { id: category.id } })
+           .set_props(c: { category: category.categoria })
+           .merge('(b)-[:IS]->(c)').exec
+    end
+    authors.each do |author|
+      query.merge(a: { Author: { id: author.id } })
+           .set_props(a: { name: author.nome })
+           .merge('(a)-[:WRITES]->(b)').exec
+    end
   end
 end

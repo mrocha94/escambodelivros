@@ -124,3 +124,4 @@ org.eclipse.jetty.util.MultiException: Multiple exceptions
 2016-12-03 18:48:21.300+0000 INFO  [API] Successfully shutdown Neo4j Server.
 2016-12-03 18:48:21.615+0000 INFO  [API] Successfully stopped database
 2016-12-03 18:48:21.616+0000 INFO  [API] Successfully shutdown database.
+2016-12-03 19:45:29.521+0000 INFO  [API] Setting startup timeout to: 120000ms based on 120000

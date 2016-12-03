@@ -1013,3 +1013,208 @@ Storage files: (filename : modification date - size)
 2016-12-03 18:48:21.604+0000 INFO  [o.n.k.i.DiagnosticsManager]: --- STOPPING diagnostics END ---
 2016-12-03 18:48:21.615+0000 INFO  [o.n.s.d.LifecycleManagingDatabase]: Successfully stopped database
 2016-12-03 18:48:21.616+0000 INFO  [o.n.s.CommunityNeoServer]: Successfully shutdown database.
+2016-12-03 19:45:29.013+0000 WARN  [o.n.k.i.JvmChecker]: You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 7 or OpenJDK(TM) 7.
+2016-12-03 19:45:29.521+0000 INFO  [o.n.s.CommunityNeoServer]: Setting startup timeout to: 120000ms based on 120000
+2016-12-03 19:45:30.266+0000 WARN  [o.n.k.EmbeddedGraphDatabase]: You are using an unsupported version of the Java runtime. Please use Oracle(R) Java(TM) Runtime Environment 7 or OpenJDK(TM) 7.
+2016-12-03 19:45:30.356+0000 INFO  [o.n.k.InternalAbstractGraphDatabase]: No locking implementation specified, defaulting to 'community'
+2016-12-03 19:45:30.587+0000 INFO  [o.n.k.i.DiagnosticsManager]: --- INITIALIZED diagnostics START ---
+2016-12-03 19:45:30.591+0000 INFO  [o.n.k.i.DiagnosticsManager]: Neo4j Kernel properties:
+2016-12-03 19:45:30.616+0000 INFO  [o.n.k.i.DiagnosticsManager]: remote_shell_enabled=true
+2016-12-03 19:45:30.616+0000 INFO  [o.n.k.i.DiagnosticsManager]: store_dir=/home/mateus/Documents/escambodelivros/db/neo4j/development/data/graph.db
+2016-12-03 19:45:30.618+0000 INFO  [o.n.k.i.DiagnosticsManager]: Diagnostics providers:
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: org.neo4j.kernel.configuration.Config
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: org.neo4j.kernel.info.DiagnosticsManager
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: SYSTEM_MEMORY
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: JAVA_MEMORY
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: OPERATING_SYSTEM
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: JAVA_VIRTUAL_MACHINE
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: CLASSPATH
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: LIBRARY_PATH
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: SYSTEM_PROPERTIES
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: LINUX_SCHEDULERS
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: NETWORK
+2016-12-03 19:45:30.619+0000 INFO  [o.n.k.i.DiagnosticsManager]: System memory information:
+2016-12-03 19:45:30.645+0000 INFO  [o.n.k.i.DiagnosticsManager]: Total Physical memory: 1,95 GB
+2016-12-03 19:45:30.646+0000 INFO  [o.n.k.i.DiagnosticsManager]: Free Physical memory: 66,47 MB
+2016-12-03 19:45:30.646+0000 INFO  [o.n.k.i.DiagnosticsManager]: Committed virtual memory: 2,37 GB
+2016-12-03 19:45:30.647+0000 INFO  [o.n.k.i.DiagnosticsManager]: Total swap space: 0,00 B
+2016-12-03 19:45:30.647+0000 INFO  [o.n.k.i.DiagnosticsManager]: Free swap space: 0,00 B
+2016-12-03 19:45:30.648+0000 INFO  [o.n.k.i.DiagnosticsManager]: JVM memory information:
+2016-12-03 19:45:30.648+0000 INFO  [o.n.k.i.DiagnosticsManager]: Free  memory: 21,17 MB
+2016-12-03 19:45:30.650+0000 INFO  [o.n.k.i.DiagnosticsManager]: Total memory: 30,94 MB
+2016-12-03 19:45:30.650+0000 INFO  [o.n.k.i.DiagnosticsManager]: Max   memory: 493,69 MB
+2016-12-03 19:45:30.700+0000 INFO  [o.n.k.i.DiagnosticsManager]: Garbage Collector: ParNew: [Par Eden Space, Par Survivor Space]
+2016-12-03 19:45:30.728+0000 INFO  [o.n.k.i.DiagnosticsManager]: Garbage Collector: ConcurrentMarkSweep: [Par Eden Space, Par Survivor Space, CMS Old Gen]
+2016-12-03 19:45:30.731+0000 INFO  [o.n.k.i.DiagnosticsManager]: Memory Pool: Code Cache (Non-heap memory): committed=3,38 MB, used=3,31 MB, max=240,00 MB, threshold=0,00 B
+2016-12-03 19:45:30.735+0000 INFO  [o.n.k.i.DiagnosticsManager]: Memory Pool: Metaspace (Non-heap memory): committed=13,38 MB, used=12,81 MB, max=-1,00 B, threshold=0,00 B
+2016-12-03 19:45:30.736+0000 INFO  [o.n.k.i.DiagnosticsManager]: Memory Pool: Compressed Class Space (Non-heap memory): committed=1,88 MB, used=1,69 MB, max=1,00 GB, threshold=0,00 B
+2016-12-03 19:45:30.737+0000 INFO  [o.n.k.i.DiagnosticsManager]: Memory Pool: Par Eden Space (Heap memory): committed=8,50 MB, used=3,09 MB, max=66,56 MB, threshold=?
+2016-12-03 19:45:30.738+0000 INFO  [o.n.k.i.DiagnosticsManager]: Memory Pool: Par Survivor Space (Heap memory): committed=1,06 MB, used=1,06 MB, max=8,31 MB, threshold=?
+2016-12-03 19:45:30.739+0000 INFO  [o.n.k.i.DiagnosticsManager]: Memory Pool: CMS Old Gen (Heap memory): committed=21,38 MB, used=5,80 MB, max=418,81 MB, threshold=0,00 B
+2016-12-03 19:45:30.740+0000 INFO  [o.n.k.i.DiagnosticsManager]: Operating system information:
+2016-12-03 19:45:30.741+0000 INFO  [o.n.k.i.DiagnosticsManager]: Operating System: Linux; version: 3.19.0-18-generic; arch: amd64; cpus: 1
+2016-12-03 19:45:30.742+0000 INFO  [o.n.k.i.DiagnosticsManager]: Max number of file descriptors: 65536
+2016-12-03 19:45:30.743+0000 INFO  [o.n.k.i.DiagnosticsManager]: Number of open file descriptors: 78
+2016-12-03 19:45:30.745+0000 INFO  [o.n.k.i.DiagnosticsManager]: Process id: 8126@mateus-VirtualBox
+2016-12-03 19:45:30.745+0000 INFO  [o.n.k.i.DiagnosticsManager]: Byte order: LITTLE_ENDIAN
+2016-12-03 19:45:30.745+0000 INFO  [o.n.k.i.DiagnosticsManager]: Local timezone: America/Sao_Paulo
+2016-12-03 19:45:30.745+0000 INFO  [o.n.k.i.DiagnosticsManager]: JVM information:
+2016-12-03 19:45:30.745+0000 INFO  [o.n.k.i.DiagnosticsManager]: VM Name: Java HotSpot(TM) 64-Bit Server VM
+2016-12-03 19:45:30.745+0000 INFO  [o.n.k.i.DiagnosticsManager]: VM Vendor: Oracle Corporation
+2016-12-03 19:45:30.745+0000 INFO  [o.n.k.i.DiagnosticsManager]: VM Version: 25.91-b14
+2016-12-03 19:45:30.749+0000 INFO  [o.n.k.i.DiagnosticsManager]: JIT compiler: HotSpot 64-Bit Tiered Compilers
+2016-12-03 19:45:30.755+0000 INFO  [o.n.k.i.DiagnosticsManager]: VM Arguments: [-XX:+DisableExplicitGC, -Dorg.neo4j.server.properties=conf/neo4j-server.properties, -Djava.util.logging.config.file=conf/logging.properties, -Dlog4j.configuration=file:conf/log4j.properties, -XX:+UseConcMarkSweepGC, -XX:+CMSClassUnloadingEnabled, -XX:-OmitStackTraceInFastThrow, -Dneo4j.home=/home/mateus/Documents/escambodelivros/db/neo4j/development, -Dneo4j.instance=/home/mateus/Documents/escambodelivros/db/neo4j/development, -Dfile.encoding=UTF-8]
+2016-12-03 19:45:30.755+0000 INFO  [o.n.k.i.DiagnosticsManager]: Java classpath:
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-util-9.2.1.v20140609.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-security-9.2.1.v20140609.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/lib/jce.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-graph-algo-2.2.0-M02.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jsr311-api-1.1.2.r612.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/org.apache.servicemix.bundles.jline-0.9.94_1.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/neo4j-browser-2.2.0-M02.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/scala-library-2.10.4.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-consistency-check-2.2.0-M02.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jackson-jaxrs-1.9.13.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/parboiled-scala_2.10-1.1.6.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-cypher-compiler-2.1-2.1.6.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-cypher-compiler-2.0-2.0.4.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/commons-beanutils-1.8.3.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-io-9.2.1.v20140609.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/opencsv-2.3.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/concurrentlinkedhashmap-lru-1.4.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/commons-compiler-2.6.1.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-udc-2.2.0-M02.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/neo4j-server-2.2.0-M02-static-web.jar
+2016-12-03 19:45:30.764+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/rrd4j-2.2.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/commons-lang-2.6.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/lucene-core-3.6.2.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/commons-logging-1.1.1.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-server-9.2.1.v20140609.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jackson-core-asl-1.9.13.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jersey-multipart-1.18.1.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-http-9.2.1.v20140609.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/neo4j-server-2.2.0-M02.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-lucene-index-2.2.0-M02.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/parboiled-core-1.1.6.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/logback-access-1.1.2.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/rhino-1.7R4.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/logback-core-1.1.2.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/scala-reflect-2.10.4.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/commons-configuration-1.10.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jersey-core-1.18.1.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-shell-2.2.0-M02.jar
+2016-12-03 19:45:30.765+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/server-api-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/bcprov-jdk16-140.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/classes
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-csv-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jersey-servlet-1.18.1.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-jmx-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-cypher-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-io-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-xml-9.2.1.v20140609.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jcl-over-slf4j-1.7.7.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-cypher-compiler-1.9-2.0.4.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-cypher-compiler-2.2-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/mimepull-1.9.3.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-graph-matching-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/logback-classic-1.1.2.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-primitive-collections-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-webapp-9.2.1.v20140609.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/conf/
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jackson-mapper-asl-1.9.13.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jersey-server-1.18.1.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/janino-2.6.1.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [bootstrap] /usr/lib/jvm/java-8-oracle/jre/lib/resources.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-import-tool-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [loader.1] file:/usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/javax.servlet-api-3.1.0.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/slf4j-api-1.7.7.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/commons-io-2.4.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/jetty-servlet-9.2.1.v20140609.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/system/lib/commons-digester-2.1.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]:  [classpath + loader.0] file:/home/mateus/Documents/escambodelivros/db/neo4j/development/lib/neo4j-kernel-2.2.0-M02.jar
+2016-12-03 19:45:30.770+0000 INFO  [o.n.k.i.DiagnosticsManager]: Library path:
+2016-12-03 19:45:30.771+0000 INFO  [o.n.k.i.DiagnosticsManager]: /usr/java/packages/lib/amd64
+2016-12-03 19:45:30.784+0000 INFO  [o.n.k.i.DiagnosticsManager]: /usr/lib64
+2016-12-03 19:45:30.784+0000 INFO  [o.n.k.i.DiagnosticsManager]: /lib64
+2016-12-03 19:45:30.784+0000 INFO  [o.n.k.i.DiagnosticsManager]: /lib
+2016-12-03 19:45:30.784+0000 INFO  [o.n.k.i.DiagnosticsManager]: /usr/lib
+2016-12-03 19:45:30.784+0000 INFO  [o.n.k.i.DiagnosticsManager]: System.properties:
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.boot.library.path = /usr/lib/jvm/java-8-oracle/jre/lib/amd64
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.country.format = BR
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: org.neo4j.server.properties = conf/neo4j-server.properties
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: path.separator = :
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: file.encoding.pkg = sun.io
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.country = US
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.java.launcher = SUN_STANDARD
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.os.patch.level = unknown
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.dir = /home/mateus/Documents/escambodelivros/db/neo4j/development
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: log4j.configuration = file:conf/log4j.properties
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.jnu.encoding = UTF-8
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.home = /home/mateus
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.timezone = America/Sao_Paulo
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: file.encoding = UTF-8
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.name = mateus
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.java.command = org.neo4j.server.Bootstrapper
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.arch.data.model = 64
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.language = en
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: user.language.format = pt
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: awt.toolkit = sun.awt.X11.XToolkit
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: file.separator = /
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.io.unicode.encoding = UnicodeLittle
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.cpu.endian = little
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: neo4j.instance = /home/mateus/Documents/escambodelivros/db/neo4j/development
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.desktop = gnome
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: neo4j.home = /home/mateus/Documents/escambodelivros/db/neo4j/development
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: sun.cpu.isalist = 
+2016-12-03 19:45:30.785+0000 INFO  [o.n.k.i.DiagnosticsManager]: Linux scheduler information:
+2016-12-03 19:45:30.788+0000 INFO  [o.n.k.i.DiagnosticsManager]: noop [deadline] cfq 
+2016-12-03 19:45:30.788+0000 INFO  [o.n.k.i.DiagnosticsManager]: noop [deadline] cfq 
+2016-12-03 19:45:30.789+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.789+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.789+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.789+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.789+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.789+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.790+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.791+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.791+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.791+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.791+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.791+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.792+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.796+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.796+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.796+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.796+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.796+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.797+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.799+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.799+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.799+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.802+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.802+0000 INFO  [o.n.k.i.DiagnosticsManager]: none
+2016-12-03 19:45:30.802+0000 INFO  [o.n.k.i.DiagnosticsManager]: Network information:
+2016-12-03 19:45:30.817+0000 INFO  [o.n.k.i.DiagnosticsManager]: Interface eth0:
+2016-12-03 19:45:30.818+0000 INFO  [o.n.k.i.DiagnosticsManager]:     address: fe80:0:0:0:a00:27ff:fe41:4446%eth0
+2016-12-03 19:45:30.821+0000 INFO  [o.n.k.i.DiagnosticsManager]:     address: 10.0.2.15
+2016-12-03 19:45:30.821+0000 INFO  [o.n.k.i.DiagnosticsManager]: Interface lo:
+2016-12-03 19:45:30.821+0000 INFO  [o.n.k.i.DiagnosticsManager]:     address: 0:0:0:0:0:0:0:1%lo
+2016-12-03 19:45:30.821+0000 INFO  [o.n.k.i.DiagnosticsManager]:     address: 127.0.0.1
+2016-12-03 19:45:30.821+0000 INFO  [o.n.k.i.DiagnosticsManager]: --- INITIALIZED diagnostics END ---
+2016-12-03 19:45:38.844+0000 INFO  [o.n.k.NeoStoreDataSource]: Opened logical log [/home/mateus/Documents/escambodelivros/db/neo4j/development/data/graph.db/neostore.transaction.db.2] version=2, lastTxId=1 (clean)

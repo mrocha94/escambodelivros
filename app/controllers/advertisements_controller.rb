@@ -6,13 +6,15 @@ class AdvertisementsController < ApplicationController
   # GET /advertisements
   # GET /advertisements.json
   def index
+
+    books = Book.all
+    books.each(&:save)
     search = params[:search]
     if search && search.size > 0
       @advertisements = Advertisement.search(search)
     else
       @advertisements = Advertisement.where(ativo: true)
     end
-    Advertisement.save_to_neo
   end
 
   def user_advertisements

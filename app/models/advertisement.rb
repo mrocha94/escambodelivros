@@ -1,6 +1,7 @@
 class Advertisement < ActiveRecord::Base
 
   after_save :save_to_mongo
+  after_save :save_to_neo
   after_destroy :remove_from_mongo
   belongs_to :books_group
   has_many :books_group_has_books, through: :books_group
@@ -10,7 +11,7 @@ class Advertisement < ActiveRecord::Base
   validate :ativo?
 
   def self.search(text, user = nil)
-    client = Advertisement.mongo_client
+    client = DbConnection.mongo
     filter = { '$text' => { '$search' => text } }
     filter[:user_id] = user unless user.nil?
     query_result = client[:advertisement].find(
@@ -36,19 +37,6 @@ class Advertisement < ActiveRecord::Base
     json
   end
 
-  def self.mongo_client
-    Mongo::Client.new(['127.0.0.1:27017'], database: 'escambodelivro_development')
-  end
-
-  def self.neo_session
-    Neo4j::Session.open(:server_db, 'http://localhost:7474', basic_auth: { username: 'neo4j', password: 'batata'})
-  end
-
-  def self.save_to_neo
-    session = Advertisement.neo_session
-    Neo4j::Node.create({name: 'andreas'}, :red, :green)
-  end
-
   private
 
   def ativo?
@@ -56,12 +44,12 @@ class Advertisement < ActiveRecord::Base
   end
 
   def remove_from_mongo
-    client = Advertisement.mongo_client
+    client = DbConnection.mongo
     client[:advertisement].delete_one(relational_id: id)
   end
 
   def save_to_mongo
-    client = Advertisement.mongo_client
+    client = DbConnection.mongo
     if ativo
       client[:advertisement].update_one({relational_id: id}, self.to_json, {upsert: true})
     else
@@ -69,6 +57,21 @@ class Advertisement < ActiveRecord::Base
     end
   end
 
+  def save_to_neo
+    session = DbConnection.neo4j
+    query = session.query.merge(u: { User: { id: user.id } })
+                   .merge(a: { Advertisement: { id: id } })
 
+    query.merge('(u)-[:PUBLISH]->(a)').exec
+
+    books.each do |book|
+      query.merge(b: { Book: { id: book.id } })
+           .merge('(a)-[:ADVERTISE]->(b)').exec
+    end
+
+    # u = session.query("MERGE (u:User {id: #{user.id}}) RETURN u").first.u
+    # a = session.query("MERGE (a:Advertisement {id: #{id}}) RETURN a").first.a
+    # session.query("MERGE #{u}-[:PUBLISH]->#{a}")
+  end
 
 end
