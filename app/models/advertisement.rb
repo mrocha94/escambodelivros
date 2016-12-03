@@ -59,13 +59,13 @@ class Advertisement < ActiveRecord::Base
 
   def save_to_neo
     session = DbConnection.neo4j
-    query = session.query.merge(u: { User: { id: user.id } })
-                   .merge(a: { Advertisement: { id: id } })
+    query = session.query.merge(u: { User: { user_id: user.id } })
+                   .merge(a: { Advertisement: { ad_id: id } })
 
     query.merge('(u)-[:PUBLISH]->(a)').exec
 
     books.each do |book|
-      query.merge(b: { Book: { id: book.id } })
+      query.merge(b: { Book: { book_id: book.id } })
            .merge('(a)-[:ADVERTISE]->(b)').exec
     end
 

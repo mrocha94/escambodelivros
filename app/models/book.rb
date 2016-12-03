@@ -31,15 +31,13 @@ class Book < ActiveRecord::Base
 
   def save_to_neo
     session = DbConnection.neo4j
-    query = session.query.merge(b: { Book: { id: id } })
+    query = session.query.merge(b: { Book: { book_id: id } })
     categories.each do |category|
-      query.merge(c: { Category: { id: category.id } })
-           .set_props(c: { category: category.categoria })
+      query.merge(c: { Category: { category_id: category.id } })
            .merge('(b)-[:IS]->(c)').exec
     end
     authors.each do |author|
-      query.merge(a: { Author: { id: author.id } })
-           .set_props(a: { name: author.nome })
+      query.merge(a: { Author: { author_id: author.id } })
            .merge('(a)-[:WRITES]->(b)').exec
     end
   end
