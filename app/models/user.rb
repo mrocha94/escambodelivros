@@ -30,6 +30,6 @@ class User < ActiveRecord::Base
 
   def save_to_neo
     session = DbConnection.neo4j
-    session.query.merge(u: { User: { user_id: id } })
+    session.query.merge(u: { User: { user_id: id } }).set(u: { name: nome })
   end
 end
