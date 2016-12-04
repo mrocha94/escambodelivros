@@ -1,0 +1,38 @@
+<div id="gallery" class="gallery all_pad wthree">
+  <div class="container">
+    <h3 class="title">Recommendations for you</h3>
+    <br>
+<% @recommendations.each do |advertisement| %>
+
+<div class="col-md-4 gal-grid  wow bounceInUp" data-wow-duration="1.5s" data-wow-delay="3s" style="margin-bottom: 30px">
+  <div class="gal-img">
+    <%= link_to advertisement_path(advertisement) do %>
+      <div class="item item-type-double">
+        <div class="item-hover">
+          <div class="item-info">
+            <div class="line"></div>
+            <div class="headline">More informations</div>
+            <div class="line"></div>
+          </div>
+          <div class="mask"></div>
+        </div>
+        <div class="item-img"><%= image_tag "g1.jpg" %></div>
+      </div>
+    <% end %>
+
+    <div class="text-center" style="padding-top: 10px">
+    <h4> <%= advertisement.titulo %></h4>
+
+    <br/>
+      <%= link_to 'EDIT', edit_advertisement_path(advertisement), :class => "btn btn-warning"  if signed_in? && current_user.id == advertisement.user_id %>
+      <%= link_to 'DELETE', advertisement_path(advertisement), :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } if signed_in? && current_user.id == advertisement.user_id %>
+      <br/><br/>
+
+    </div>
+
+
+  </div>
+</div>
+<% end %>
+  </div>
+</div>

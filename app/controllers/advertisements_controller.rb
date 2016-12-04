@@ -10,10 +10,14 @@ class AdvertisementsController < ApplicationController
     books = Book.all
     books.each(&:save)
     search = params[:search]
-    if search && search.size > 0
-      @advertisements = Advertisement.search(search)
+    if (search && search.size > 0)
+      @advertisements = Advertisement.text_search(search)
     else
       @advertisements = Advertisement.where(ativo: true)
+    end
+
+    if signed_in?
+      @recommendations = Advertisement.recommendation_search(current_user.id)
     end
   end
 
