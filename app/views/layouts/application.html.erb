@@ -98,7 +98,21 @@
   </div>
   <!-- //header -->
 
-
+  <% if flash[:notice] %>
+    <div class="message text-center" id="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% elsif flash[:warning] %>
+    <div class="has_error message text-center" id="warning">
+      <ul class="warning text-center">
+        <% flash[:warning].each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <%= yield %>
 
