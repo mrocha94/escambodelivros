@@ -35,6 +35,9 @@
 
               <% if signed_in? %>
                   <li>
+                    <%= link_to 'My Advertisements', my_advertisements_path %>
+                  </li>
+                  <li>
                     <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
                   </li>
               <% else %>
@@ -73,17 +76,13 @@
             <li>
               <div class="banner-text">
                 <h3>MAKE YOUR LIFE BEAUTIFUL</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-                  ab illo.</p>
+                <p></p>
               </div>
             </li>
             <li>
               <div class="banner-text">
                 <h3>MAKE YOUR DREAMS COMES TRUE</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-                  ab illo.</p>
+                <p></p>
               </div>
             </li>
           </ul>
