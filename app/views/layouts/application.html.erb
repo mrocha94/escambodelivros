@@ -7,53 +7,110 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <%= link_to "Escambo de Livros", root_path, class: 'navbar-brand' %>
-          </div>
-          <ul class="nav navbar-nav">
-            <% if signed_in? %>
-              <li>
-                <%= link_to 'My Advertisements', my_advertisements_path %>
-              </li>
-            <% end %>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <% if signed_in? %>
-              <li>
-                <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to t(".sign_in"), sign_in_path %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <div class="container-fluid">
+
+
+
+
+
+  <div id="home" class="banner w3l">
     <div class="container">
-      <% if flash[:notice] %>
-        <div class="message" id="notice">
-          <%= flash[:notice] %>
+      <nav class="navbar navbar-default  wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header logo">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+
         </div>
-      <% elsif flash[:warning] %>
-        <div class="has_error message" id="warning">
-          <ul class="warning">
-            <% flash[:warning].each do |msg| %>
-              <li>
-                <%= msg %>
-              </li>
-            <% end %>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+          <nav class="cl-effect-1">
+            <ul class="nav navbar-nav ">
+              <li> <%= link_to "Home", root_path, class: 'active' %></li>
+
+              <% if signed_in? %>
+                  <li>
+                    <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
+                  </li>
+              <% else %>
+                  <li>
+                    <%= link_to t(".sign_in"), sign_in_path %>
+                  </li>
+              <% end %>
+
+            </ul>
+          </nav>
+        </div><!-- /navbar-collapse -->
+      </nav>
+      <div class="banner-info wow bounceInDown" data-wow-duration="1s" data-wow-delay="0s">
+        <script src="js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use "$(window).load(function() {"
+            $(function () {
+                // Slideshow 4
+                $("#slider3").responsiveSlides({
+                    auto: true,
+                    pager: false,
+                    nav: true,
+                    speed: 500,
+                    namespace: "callbacks",
+                    before: function () {
+                        $('.events').append("<li>before event fired.</li>");
+                    },
+                    after: function () {
+                        $('.events').append("<li>after event fired.</li>");
+                    }
+                });
+            });
+        </script>
+        <div  class="callbacks_container">
+          <ul class="rslides" id="slider3">
+            <li>
+              <div class="banner-text">
+                <h3>MAKE YOUR LIFE BEAUTIFUL</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+                  ab illo.</p>
+              </div>
+            </li>
+            <li>
+              <div class="banner-text">
+                <h3>MAKE YOUR DREAMS COMES TRUE</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+                  ab illo.</p>
+              </div>
+            </li>
           </ul>
         </div>
-      <% end %>
-      <%= yield %>
+      </div>
+
+
+
+      <div class="text-center">
+        <%= yield :search %>
+      </div>
     </div>
-    <footer class="footer">
-      <small></small>
-    </footer>
+  </div>
+  <!-- //header -->
+
+
+
+  <%= yield %>
+
+
+</div>
+
+  <div class="copy-right">
+    <div class="container">
+      <p>&copy; 2016 Pedagogy . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+    </div>
+  </div>
+
   </body>
 </html>

@@ -1,18 +1,22 @@
+<div id="gallery" class="gallery all_pad wthree">
+  <div class="container">
+    <h3 class="title">Sign in</h3>
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %><br>
-    <%= form.text_field :email, type: 'email' %>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+  <div class="text-field text-center">
+    <%= form.text_field :email, type: 'email', :class => "form-control", :placeholder => "Email ..." %>
   </div>
-
-  <div class="password-field">
-    <%= form.label :password %><br>
-    <%= form.password_field :password %>
+        <br>
+  <div class="password-field text-center">
+    <%= form.password_field :password, :class => "form-control", :placeholder => "Password ..." %>
   </div>
 
   <div class="submit-field">
-    <%= form.submit %>
+  <br>
+    <%= form.submit "Enter", :class => "btn btn-primary" %>
   </div>
-
+<br>
   <div class="other-links">
     <% if Clearance.configuration.allow_sign_up? %>
       <%= link_to t(".sign_up"), sign_up_path %>
@@ -20,3 +24,6 @@
     <%= link_to t(".forgot_password"), new_password_path %>
   </div>
 <% end %>
+    </div>
+  </div>
+</div>

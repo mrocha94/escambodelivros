@@ -1,18 +1,43 @@
 <%= form_for(@advertisement) do |form| %>
   <div class="actions">
-    <div class="text-field">
-      <%= form.label :titulo %> <br>
-      <%= form.text_field :titulo, type: 'text' %>
+    <div class="text-field text-center">
+
+      <%= form.text_field :titulo, type: 'text', :class => "form-control", :placeholder => "Enter the title of the ad ... " %>
     </div>
-    <div class="text-field">
-      <%= form.label :descricao %> <br>
-      <%= form.text_area :descricao, type: 'text' %>
-    </div>
-    <div class="text-field">
-      <%= form.label :ativo %>
-      <%= form.check_box :ativo, type: 'text' %>
+    <br/>
+    <div class="text-field text-center">
+
+      <%= form.text_area :descricao, type: 'text', :class => "form-control", :placeholder => "Write a description of the advertisement ... " %>
     </div>
 
-    <%= form.submit %>
+    <div class="text-field">
+<br>
+      <table border="0">
+        <tr>
+          <td>
+            <%= form.submit "Save", :class => "btn btn-primary newBotton" %>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+<!-- Tentar fazer esse botão funcionar -->
+            <button type="button" class="btn btn-success newBotton">Enable</button>
+            <%= form.check_box :ativo %>
+            <%= @ativo %>
+
+
+
+          </td>
+        </tr>
+      </table>
+
+
+
+
+
+
+    </div>
+
+
+
   </div>
 <% end %>

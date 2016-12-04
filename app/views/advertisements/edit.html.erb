@@ -1,13 +1,19 @@
-<h1>Editing Advertisement</h1>
+<div id="gallery" class="gallery all_pad wthree">
+  <div class="container">
+
+<h3 class="title">Editing Advertisement</h3>
 
 <%= render 'form' %>
 
-<h3>Livros</h3>
+<h3 class="title">Books of this ad <%= link_to '+', new_advertisement_books_group_has_book_path(@advertisement) %></h3>
+    <%= link_to 'Show', @advertisement %> |
+    <%= link_to 'Back', advertisements_path %>
+    <br><br>
 <table class="table">
     <tr>
-      <th>Titulo</th>
-      <th>Estado</th>
-      <th>Ano de Compra</th>
+      <th>Title</th>
+      <th>New / Used</th>
+      <th>Publication Year</th>
     </tr>
   <% @advertisement.books_group_has_books.each do |book| -%>
     <tr>
@@ -18,7 +24,8 @@
     </tr>
   <% end %>
 </table>
-<%= link_to 'Add book', new_advertisement_books_group_has_book_path(@advertisement) %>
+
 <br><br>
-<%= link_to 'Show', @advertisement %> |
-<%= link_to 'Back', advertisements_path %>
+
+  </div>
+</div>

@@ -15,3 +15,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+    $("#books_group_has_book_book_id").select2();
+});

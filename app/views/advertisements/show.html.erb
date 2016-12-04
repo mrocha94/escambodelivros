@@ -1,22 +1,32 @@
-<h1><%= @advertisement.titulo %></h1>
-<h3>Livros</h3>
-<table class="table">
-    <tr>
-      <th>Titulo</th>
-      <th>Estado</th>
-      <th>Ano de Compra</th>
-    </tr>
-  <% @advertisement.books_group_has_books.each do |book| -%>
-    <tr>
-      <td><%= book.book.titulo %></td>
-      <td><%= book.estado %></td>
-      <td><%= book.ano_compra %></td>
-    </tr>
-  <% end %>
-</table>
+<div id="gallery" class="gallery all_pad wthree">
+  <div class="container">
 
-<h3>Descricao</h3>
-<p><%= @advertisement.descricao %></p>
+    <h3 class="title"><%= @advertisement.titulo %></h3>
 
-<%= link_to 'Edit', edit_advertisement_path(@advertisement) if current_user == @advertisement.user %>
-<%= link_to 'Back', advertisements_path %>
+    <%= link_to 'Edit', edit_advertisement_path(@advertisement) if current_user == @advertisement.user %>
+    |
+    <%= link_to 'Back', advertisements_path %>
+    <br><br>
+    <p><%= @advertisement.descricao %></p>
+    <br/>
+
+    <table class="table">
+      <tr>
+        <th>Title</th>
+        <th>New / Used</th>
+        <th>Publication Year</th>
+      </tr>
+      <% @advertisement.books_group_has_books.each do |book| -%>
+          <tr>
+            <td><%= book.book.titulo %></td>
+            <td><%= book.estado %></td>
+            <td><%= book.ano_compra %></td>
+
+          </tr>
+      <% end %>
+    </table>
+
+    <br><br>
+
+  </div>
+</div>

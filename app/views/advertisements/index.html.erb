@@ -1,13 +1,16 @@
 
 
-<h1>Advertisements</h1>
+
+
+<% content_for :search do %>
 
 <%= form_tag url_for(:controller => 'advertisements', :action => 'index'), method: 'get' do -%>
-  <div class="text-field">
-    <%= label_tag 'Search' %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag :search, name: nil %>
+  <div class="text-field contact-right">
+    <%= text_field_tag :search, params[:search], class: 'form-control input-lg', :placeholder => 'Which book or collection do you look for?' %>
+    <%= submit_tag :"LET'S GO!", name: nil %>
   </div>
+<% end %>
+
 <% end %>
 
 <%= render 'list' %>
